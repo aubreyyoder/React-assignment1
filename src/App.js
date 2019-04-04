@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
-import List from './List';
-import './App.css';
-
+import React, { Component } from "react";
+import List from "./composition/List";
+import "./App.css";
 
 class App extends Component {
   static defaultProps = {
     store: {
       lists: [],
-      allCards: {},
+      allCards: {}
     }
   };
-
-
   render() {
-    const { store } = this.props
+    const { store } = this.props;
     return (
       <main className="App">
         <header className="App-header">
@@ -21,7 +18,7 @@ class App extends Component {
         </header>
         <div className="App-list">
           {store.lists.map(list => (
-            <List 
+            <List
               key={list.id}
               header={list.header}
               cards={list.cardIds.map(id => store.allCards[id])}
@@ -32,6 +29,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
