@@ -9,6 +9,7 @@ class App extends Component {
       allCards: {}
     }
   };
+
   render() {
     const { store } = this.props;
     return (
